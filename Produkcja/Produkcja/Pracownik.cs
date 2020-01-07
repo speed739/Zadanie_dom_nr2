@@ -21,9 +21,13 @@ namespace Produkcja
             Nazwisko = nazvisko;
             this.haslo = haslo;
         }
-        public string Zwroc_haslo()
+        public bool Zwroc_haslo(string password)
         {
-            return haslo;
+            if (password == haslo)
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Display(Pracownik a)

@@ -8,7 +8,7 @@ namespace Produkcja
     {
         static void Main(string[] args)
         {
-            Praca praca = new Praca();
+            System_Logowania praca = new System_Logowania();
             Zapis_odczyt_danych dane = new Zapis_odczyt_danych();
 
             Pracownik a = new Pracownik(1, "Jan", "Kania", "123");
