@@ -10,6 +10,10 @@ namespace Produkcja
         {
 
             uint ilosc_etykiet;
+            
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("ZALOGOWANY"); Console.ResetColor();
+
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Podanie 0 konczy produkcje\n"); Console.ResetColor();
 
@@ -28,7 +32,7 @@ namespace Produkcja
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("WYLOGOWANY\n"); Console.ResetColor();
-
+            
         }
 
     }

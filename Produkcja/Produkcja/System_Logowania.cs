@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace Produkcja
 {
@@ -10,20 +10,21 @@ namespace Produkcja
         {
             int id;
             string password, zgoda;
-
+            Pracownik pomocniczy; //zmienna przechowuje obiekt zwracano przez funkcje FirstorDefault
+            
             Console.Write("Logowanie:\nPodaj Id pracownika - ");
             id = int.Parse(Console.ReadLine());
 
             Console.Write("Podaj haslo ");
             password = Console.ReadLine();
 
-            if (Pracownicy.Exists(x => x.Id_Pracownika == id && x.Zwroc_haslo(password) == true))
+            pomocniczy = Pracownicy.FirstOrDefault(
+                (x => x.Id_Pracownika == id && x.Zwroc_haslo(password) == true));
+            
+            if (pomocniczy != null)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("ZALOGOWANY"); Console.ResetColor();
 
-                Drukowanie(Pracownicy.Find(x => x.Id_Pracownika == id && x.Zwroc_haslo(password) == true));
-
+                Drukowanie(pomocniczy);
                 Console.Write("Chcesz pracowac innym pracownikiem y/n? - ");
                 zgoda = Console.ReadLine(); Console.WriteLine();
 
